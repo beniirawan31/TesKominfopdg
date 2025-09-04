@@ -12,8 +12,7 @@
         <!-- Sidebar user panel -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
-                <img src="" class="img-circle elevation-2"
-                    alt="User Image">
+                <img src="" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
                 <a href="#" class="d-block text-white">
@@ -35,7 +34,24 @@
                     </a>
                 </li>
 
-               
+                <li class="nav-item">
+                    <a href="{{ route('dashboard') }}"
+                        class="nav-link {{ request()->routeIs('dashboard') ? 'active-custom' : '' }}">
+                        <i class="nav-icon fas fa-tachometer-alt fa-lg"></i>
+                        <p>Siswa</p>
+                    </a>
+                </li>
+
+
+                <li class="nav-item">
+                    <a href="{{ route('kelas.index') }}"
+                        class="nav-link {{ request()->routeIs('dashboard') ? 'active-custom' : '' }}">
+                        <i class="nav-icon fas fa-tachometer-alt fa-lg"></i>
+                        <p>Kelas</p>
+                    </a>
+                </li>
+
+
 
                 {{-- <li class="nav-item">
                     <a href="{{ route('kurir') }}" class="nav-link {{ request()->routeIs('kurir') ? 'active-custom' : '' }}">
