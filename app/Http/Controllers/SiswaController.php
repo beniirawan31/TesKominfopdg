@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\KelasModel;
 use App\Models\t_siswa;
 use App\Models\TbSiswa;
 use App\Models\User;
@@ -12,14 +13,15 @@ class SiswaController extends Controller
     public function index()
     {
 
-        $siswa = TbSiswa::all();
+        $siswa = TbSiswa::with('kelas')->get(); // ikutkan relasi kelas
         return view('Dashboard.index', compact('siswa'));
-        
     }
 
     public function create()
     {
-        return view('Dashboard.create');
+        $kelas = KelasModel::all();
+
+        return view('Dashboard.create', compact('kelas'));
     }
 
     // simpan data baru
@@ -30,7 +32,7 @@ class SiswaController extends Controller
             'nisn'       => 'required|string|unique:tb_siswas,nisn',
             'alamat'     => 'required|string',
             'id_sekolah' => 'required|string',
-            'id_kelas'   => 'required|string',
+            'id_kelas' => 'required|exists:kelas_models,id',
             'id_th_ajar' => 'required|string',
             'id_mesjid'  => 'required|string',
             'id_card'    => 'required|string|unique:tb_siswas,id_card',
@@ -44,7 +46,8 @@ class SiswaController extends Controller
     public function edit($id)
     {
         $siswa = TbSiswa::findOrFail($id);
-        return view('Dashboard.edit', compact('siswa'));
+        $kelas = KelasModel::all(); // ambil semua kelas untuk dropdown
+        return view('Dashboard.edit', compact('siswa', 'kelas'));
     }
 
     public function update(Request $request, $id)
@@ -56,7 +59,7 @@ class SiswaController extends Controller
             'nisn'       => 'required|string|unique:tb_siswas,nisn,' . $id,
             'alamat'     => 'required|string',
             'id_sekolah' => 'required|string',
-            'id_kelas'   => 'required|string',
+            'id_kelas' => 'required|exists:kelas_models,id',
             'id_th_ajar' => 'required|string',
             'id_mesjid'  => 'required|string',
             'id_card'    => 'required|string|unique:tb_siswas,id_card,' . $id,

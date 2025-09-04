@@ -22,4 +22,9 @@ class TbSiswa extends Model
         'id_mesjid',
         'id_card',
     ];
+
+    public function kelas()
+    {
+        return $this->belongsTo(KelasModel::class, 'id_kelas');
+    }
 }
