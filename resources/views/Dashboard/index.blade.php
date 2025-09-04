@@ -11,7 +11,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="fw-bold text-">Siswa/h1>
+                    <h1 class="fw-bold text-">Siswa</h1>
                 </div>
             </div>
         </div>
@@ -57,7 +57,13 @@
                                                 <a href="{{ route('siswa.edit', $row->id) }}"
                                                     class="btn btn-warning btn-sm">Edit</a>
 
-                                                <a href="#" class="btn btn-danger btn-sm">Hapus</a>
+                                                <form action="{{ route('siswa.destroy', $row->id) }}" method="POST"
+                                                    class="d-inline"
+                                                    onsubmit="return confirm('Yakin ingin menghapus siswa ini?')">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
+                                                </form>
                                             </td>
                                         </tr>
                                     @endforeach

@@ -27,8 +27,8 @@
                 data-accordion="false">
 
                 <li class="nav-item">
-                    <a href="{{ route('dashboard') }}"
-                        class="nav-link {{ request()->routeIs('dashboard') ? 'active-custom' : '' }}">
+                    <a href="{{ route('dashboard1') }}"
+                        class="nav-link {{ request()->routeIs('dashboard1') ? 'active-custom' : '' }}">
                         <i class="nav-icon fas fa-tachometer-alt fa-lg"></i>
                         <p>Dashboard</p>
                     </a>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\dashboard1controller;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\KelasController;
 use App\Http\Controllers\SessionController;
@@ -25,6 +26,8 @@ Route::get('/siswa/create', [SiswaController::class, 'create'])->name('siswa.cre
 Route::post('/siswa/store', [SiswaController::class, 'store'])->name('siswa.store');
 Route::get('/siswa/{id}/edit', [SiswaController::class, 'edit'])->name('siswa.edit');
 Route::put('/siswa/{id}', [SiswaController::class, 'update'])->name('siswa.update');
+Route::delete('/siswa/{id}', [SiswaController::class, 'destroy'])->name('siswa.destroy');
+
 
 
 //kelas
@@ -36,3 +39,5 @@ Route::put('/kelas/{id}', [KelasController::class, 'update'])->name('kelas.updat
 Route::delete('/kelas/{id}', [KelasController::class, 'destroy'])->name('kelas.destroy');
 
 Route::resource('walikelas', WalikelasController::class);
+
+Route::get('/dashboard1', [dashboard1controller::class, 'dashboard'])->name('dashboard1');

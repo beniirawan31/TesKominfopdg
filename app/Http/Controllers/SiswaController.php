@@ -69,4 +69,12 @@ class SiswaController extends Controller
 
         return redirect()->route('dashboard')->with('success', 'Data siswa berhasil diperbarui');
     }
+
+    public function destroy($id)
+    {
+        $siswa = TbSiswa::findOrFail($id);
+        $siswa->delete();
+
+        return redirect()->route('dashboard')->with('success', 'Data siswa berhasil dihapus');
+    }
 }
