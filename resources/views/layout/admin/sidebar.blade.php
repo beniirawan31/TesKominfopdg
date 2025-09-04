@@ -51,6 +51,14 @@
                     </a>
                 </li>
 
+                <li class="nav-item">
+                    <a href="{{ route('walikelas.index') }}"
+                        class="nav-link {{ request()->routeIs('walikelas.*') ? 'active-custom' : '' }}">
+                        <i class="nav-icon fas fa-users fa-lg"></i>
+                        <p>Wali Kelas</p>
+                    </a>
+                </li>
+
 
 
                 {{-- <li class="nav-item">

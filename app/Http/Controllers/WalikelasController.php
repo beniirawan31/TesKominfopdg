@@ -24,7 +24,7 @@ class WalikelasController extends Controller
     {
         $request->validate([
             'nama'     => 'required|string|max:255',
-            'kelas_id' => 'required|exists:kelas,id',
+            'kelas_id' => 'required|exists:kelas_models,id',
         ]);
 
         WalikelasModel::create($request->all());
@@ -43,7 +43,7 @@ class WalikelasController extends Controller
     {
         $request->validate([
             'nama'     => 'required|string|max:255',
-            'kelas_id' => 'required|exists:kelas,id',
+            'kelas_id' => 'required|exists:kelas_models,id',
         ]);
 
         $walikelas = WalikelasModel::findOrFail($id);

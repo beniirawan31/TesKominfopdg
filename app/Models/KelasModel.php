@@ -12,4 +12,9 @@ class KelasModel extends Model
     protected $fillable = [
         'nama',
     ];
+
+    public function walikelas()
+    {
+        return $this->hasMany(WalikelasModel::class, 'kelas_id');
+    }
 }
