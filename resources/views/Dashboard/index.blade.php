@@ -22,7 +22,7 @@
             <div class="row justify-content-center">
                 <div class="col-12">
                     <div class="card shadow-lg border-0" style="border-radius: 0.75rem; overflow: hidden;">
-
+                        <a href="{{ route('siswa.create') }}" class="btn btn-primary mb-3">+ Tambah Siswa</a>
                         <div class="card-body p-3">
                             <table id="example2"
                                 class="table table-bordered table-hover text-center align-middle shadow-sm"
@@ -54,7 +54,9 @@
                                             <td>{{ $row->id_mesjid }}</td>
                                             <td>{{ $row->id_card }}</td>
                                             <td>
-                                                <a href="#" class="btn btn-warning btn-sm">Edit</a>
+                                                <a href="{{ route('siswa.edit', $row->id) }}"
+                                                    class="btn btn-warning btn-sm">Edit</a>
+
                                                 <a href="#" class="btn btn-danger btn-sm">Hapus</a>
                                             </td>
                                         </tr>

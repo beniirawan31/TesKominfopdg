@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tb_siswas', function (Blueprint $table) {
+       Schema::create('tb_siswas', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
             $table->string('nisn')->unique(); // biasanya unik
@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('id_card')->unique();
             $table->timestamps();
         });
+
     }
 
     /**

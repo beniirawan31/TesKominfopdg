@@ -21,3 +21,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/dashboard', [SiswaController::class, 'index'])->name('dashboard');
 Route::get('/siswa/create', [SiswaController::class, 'create'])->name('siswa.create');
 Route::post('/siswa/store', [SiswaController::class, 'store'])->name('siswa.store');
+Route::get('/siswa/{id}/edit', [SiswaController::class, 'edit'])->name('siswa.edit');
+Route::put('/siswa/{id}', [SiswaController::class, 'update'])->name('siswa.update');

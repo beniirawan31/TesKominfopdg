@@ -17,6 +17,7 @@ class TbSiswa extends Model
         'nisn',
         'alamat',
         'id_sekolah',
+        'id_kelas',
         'id_th_ajar',
         'id_mesjid',
         'id_card',
