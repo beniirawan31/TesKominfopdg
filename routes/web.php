@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\SessionController;
+use App\Http\Controllers\SiswaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,9 +16,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [SessionController::class, 'index'])->name('login');
-Route::post('/loginproses', [SessionController::class, 'loginproses'])->name('loginproses');
-Route::get('/register', [SessionController::class, 'register'])->name('register');
-Route::post('/registerproses', [SessionController::class, 'registerproses'])->name('registerproses');
 
-Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+Route::get('/dashboard', [SiswaController::class, 'index'])->name('dashboard');
+Route::get('/siswa/create', [SiswaController::class, 'create'])->name('siswa.create');
+Route::post('/siswa/store', [SiswaController::class, 'store'])->name('siswa.store');

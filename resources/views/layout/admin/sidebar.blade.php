@@ -4,7 +4,7 @@
     <a href="{{ route('dashboard') }}" class="brand-link" style="background-color: #065084;">
         <img src="{{ asset('admin/dist/img/AdminLTELogo.png') }}" alt="Logo" class="brand-image img-circle elevation-3"
             style="opacity: .8">
-        <span class="brand-text font-weight-bold text-white">Kenzo Laundry</span>
+        <span class="brand-text font-weight-bold text-white">Test</span>
     </a>
 
     <!-- Sidebar -->

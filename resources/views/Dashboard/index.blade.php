@@ -11,7 +11,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="fw-bold text-">Halaman Order</h1>
+                    <h1 class="fw-bold text-">Siswa/h1>
                 </div>
             </div>
         </div>
@@ -22,13 +22,6 @@
             <div class="row justify-content-center">
                 <div class="col-12">
                     <div class="card shadow-lg border-0" style="border-radius: 0.75rem; overflow: hidden;">
-                        {{-- <div class="card-header d-flex justify-content-between align-items-center"
-                            style="background: linear-gradient(90deg, #320A6B, #5D3BE8); color: white;">
-                            <a href="{{ route('order.create') }}" class="btn btn-light btn-sm"
-                                style="border-radius: 20px; font-weight: 500;">
-                                <i class="fas fa-plus"></i> Tambah Order
-                            </a>
-                        </div> --}}
 
                         <div class="card-body p-3">
                             <table id="example2"
@@ -37,23 +30,35 @@
                                 <thead style="background-color: #065084; color: white;">
                                     <tr>
                                         <th>No</th>
-                                        <th>Nama Pelanggan</th>
-                                        <th>Alamat</th>
-                                        <th>Nomor HP</th>
-                                        <th>Nama Layanan</th>
-                                        <th>Harga</th>
-                                        <th>Jumlah</th>
-                                        <th>Total Harga</th>
-                                        <th>Tanggal Order</th>
-                                        <th>Tanggal Selesai</th>
-                                        <th>Bukti Pembayaran</th>
-                                        <th>Pesan</th>
-                                        <th>Status</th>
+                                        <th>Nama </th>
+                                        <th>Nisn</th>
+                                        <th>alamat</th>
+                                        <th>id_sekolah</th>
+                                        <th>id_kelas</th>
+                                        <th>id_th ajaran</th>
+                                        <th>id_mesjid</th>
+                                        <th>id_card</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody style="background-color: #f9f9f9;">
-                                
+                                    @foreach ($siswa as $index => $row)
+                                        <tr>
+                                            <td>{{ $index + 1 }}</td>
+                                            <td>{{ $row->nama }}</td>
+                                            <td>{{ $row->nisn }}</td>
+                                            <td>{{ $row->alamat }}</td>
+                                            <td>{{ $row->id_sekolah }}</td>
+                                            <td>{{ $row->id_kelas ?? '-' }}</td> {{-- kalau ada field id_kelas --}}
+                                            <td>{{ $row->id_th_ajar }}</td>
+                                            <td>{{ $row->id_mesjid }}</td>
+                                            <td>{{ $row->id_card }}</td>
+                                            <td>
+                                                <a href="#" class="btn btn-warning btn-sm">Edit</a>
+                                                <a href="#" class="btn btn-danger btn-sm">Hapus</a>
+                                            </td>
+                                        </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
